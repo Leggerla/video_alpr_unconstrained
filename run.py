@@ -108,7 +108,8 @@ if __name__ == '__main__':
 
 							print(('\t\tLP: %s' % lp_str))
 
-							image_plate_numbers.append(lp_str)
+							if lp_str not in image_plate_numbers:
+								image_plate_numbers.append(lp_str)
 
 						else:
 
