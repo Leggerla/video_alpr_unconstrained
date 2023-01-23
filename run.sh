@@ -20,6 +20,16 @@ check_dir()
 	fi
 }
 
+check_file()
+{
+	if [ ! -f "$1" ]
+	then
+		return 0
+	else
+		return 1
+	fi
+}
+
 
 # Check if Darknet is compiled
 check_file "darknet/libdarknet.so"
@@ -67,11 +77,11 @@ if [ -z "$output_dir" ]; then echo "Ouput dir not set."; usage; exit 1; fi
 if [ -z "$csv_file"   ]; then echo "CSV file not set." ; usage; exit 1; fi
 
 # Check if input dir exists
-check_dir $input_dir
+check_file $input_dir
 retval=$?
 if [ $retval -eq 0 ]
 then
-	echo "Input directory ($input_dir) does not exist"
+	echo "Input file ($input_dir) does not exist"
 	exit 1
 fi
 
@@ -87,16 +97,18 @@ fi
 set -e
 
 # Detect vehicles
-python vehicle-detection.py $input_dir $output_dir
+#python vehicle-detection.py $input_dir $output_dir
 
 # Detect license plates
-python license-plate-detection.py $output_dir $lp_model
+#python license-plate-detection.py $output_dir $lp_model
 
 # OCR
-python license-plate-ocr.py $output_dir
+#python license-plate-ocr.py $output_dir
+
+python3 run.py $input_dir $output_dir
 
 # Draw output and generate list
-python gen-outputs.py $input_dir $output_dir > $csv_file
+#python gen-outputs.py $input_dir $output_dir > $csv_file
 
 # Clean files and draw output
 rm $output_dir/*_lp.png
