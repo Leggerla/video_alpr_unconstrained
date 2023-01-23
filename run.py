@@ -11,6 +11,27 @@ from src.utils import crop_region, nms, im2single
 from darknet.python.darknet import detect
 from src.keras_utils import load_model, detect_lp
 
+def check_if_standard(number):
+  if len(number) != 7:
+    return False
+
+  if number[:2].isalpha() and number[2:4].isdigit() and number[4:].isalpha():
+    return True
+  else:
+    return False
+
+def correct_for_i(number):
+  number_list = list(number)
+  for i, num in enumerate(number_list):
+    if num == 'I' or num == '1':
+      if i < 2 or i >= 4:
+        number_list[i] = 'I'
+      else:
+        number_list[i] = '1'
+
+  number = ''.join(number_list)
+  return number
+
 
 if __name__ == '__main__':
 
@@ -109,7 +130,9 @@ if __name__ == '__main__':
 							print(('\t\tLP: %s' % lp_str))
 
 							if lp_str not in image_plate_numbers:
-								image_plate_numbers.append(lp_str)
+								number = correct_for_i(lp_str)
+								image_plate_numbers.append(number)
+								image_plate_numbers.append(check_if_standard(number))
 
 						else:
 
