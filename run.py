@@ -11,7 +11,7 @@ from src.utils import crop_region, nms, im2single
 from darknet.python.darknet import detect
 from src.keras_utils import load_model, detect_lp
 
-def check_if_standard(number):
+def is_standard(number):
   if len(number) != 7:
     return False
 
@@ -132,7 +132,6 @@ if __name__ == '__main__':
 							if lp_str not in image_plate_numbers:
 								number = correct_for_i(lp_str)
 								image_plate_numbers.append(number)
-								image_plate_numbers.append(check_if_standard(number))
 
 						else:
 
@@ -140,7 +139,8 @@ if __name__ == '__main__':
 
 				if image_plate_numbers:
 					image_plate_numbers.sort()
-					all_plate_numbers.append(image_plate_numbers)
+					ipn_standard = [[ipn, is_standard(ipn)] for ipn in image_plate_numbers]
+					all_plate_numbers.append([item for sublist in ipn_standard for item in sublist])
 
 			success, image = vidcap.read()
 
