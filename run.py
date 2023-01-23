@@ -13,15 +13,6 @@ from src.keras_utils import load_model, detect_lp
 from darknet.python.darknet import detect
 
 
-def array_to_image(arr):
-    # need to return old values to avoid python freeing memory
-    arr = arr.transpose(2,0,1)
-    c, h, w = arr.shape[0:3]
-    arr = np.ascontiguousarray(arr.flat, dtype=np.float32) / 255.0
-    data = arr.ctypes.data_as(dn.POINTER(dn.c_float))
-    im = dn.IMAGE(w,h,c,data)
-    return im, arr
-
 if __name__ == '__main__':
 
 	try:
@@ -64,8 +55,7 @@ if __name__ == '__main__':
 		success, Iorig = vidcap.read()
 		while success:
 
-			image, Iorig_copy = array_to_image(Iorig)
-			R, _ = detect(vehicle_net, vehicle_meta, image, thresh=vehicle_threshold)
+			R, _ = detect(vehicle_net, vehicle_meta, Iorig, thresh=vehicle_threshold)
 
 			R = [r for r in R if r[0] in ['car', 'bus']]
 
@@ -94,8 +84,7 @@ if __name__ == '__main__':
 					bound_dim = min(side + (side % (2 ** 4)), 608)
 					print(("\t\tBound dim: %d, ratio: %f" % (bound_dim, ratio)))
 
-					image_Icar, Icar_copy = array_to_image(Icar)
-					Llp, LlpImgs, _ = detect_lp(wpod_net, im2single(image_Icar), bound_dim, 2 ** 4, (240, 80),
+					Llp, LlpImgs, _ = detect_lp(wpod_net, im2single(Icar), bound_dim, 2 ** 4, (240, 80),
 												lp_threshold)
 
 					if len(LlpImgs):
@@ -107,9 +96,8 @@ if __name__ == '__main__':
 
 
 						#####################
-						image_Ilp, Ilp_copy = array_to_image(Ilp)
 						print('Performing OCR...')
-						R, (width, height) = detect(ocr_net, ocr_meta, image_Ilp, thresh=ocr_threshold, nms=None)
+						R, (width, height) = detect(ocr_net, ocr_meta, Ilp, thresh=ocr_threshold, nms=None)
 
 						if len(R):
 
