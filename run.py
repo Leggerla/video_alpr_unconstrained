@@ -55,6 +55,8 @@ if __name__ == '__main__':
 		success, Iorig = vidcap.read()
 		while success:
 
+			Iorig = cv2.cvtColor(Iorig, cv2.COLOR_BGR2RGB)
+
 			R, _ = detect(vehicle_net, vehicle_meta, Iorig, thresh=vehicle_threshold)
 
 			R = [r for r in R if r[0] in ['car', 'bus']]
@@ -115,6 +117,7 @@ if __name__ == '__main__':
 						else:
 
 							print('No characters found')
+			success, Iorig = vidcap.read()
 
 
 	except:

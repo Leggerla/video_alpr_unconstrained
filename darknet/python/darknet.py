@@ -166,7 +166,7 @@ def detect(net, meta, image, thresh=.5, hier_thresh=.5, nms=.45):
 	if isinstance(image, bytes): free_image(im)
 	free_detections(dets, num)
 	return res, wh
-    
+
 if __name__ == "__main__":
     #net = load_net("cfg/densenet201.cfg", "/home/pjreddie/trained/densenet201.weights", 0)
     #im = load_image("data/wolf.jpg", 0, 0)
