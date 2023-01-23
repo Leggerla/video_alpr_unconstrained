@@ -119,6 +119,8 @@ if __name__ == '__main__':
 
 			success, image = vidcap.read()
 
-
 	except:
 		traceback.print_exc()
+		sys.exit(1)
+
+	sys.exit(0)
