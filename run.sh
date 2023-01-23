@@ -20,16 +20,6 @@ check_dir()
 	fi
 }
 
-check_file()
-{
-	if [ ! -f "$1" ]
-	then
-		return 0
-	else
-		return 1
-	fi
-}
-
 
 # Check if Darknet is compiled
 check_file "darknet/libdarknet.so"

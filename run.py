@@ -16,8 +16,8 @@ if __name__ == '__main__':
 
 	try:
 
-		input_dir = '../videos/230106_162542_739_RE.MOV'
-		output_dir = '../tmp/output'
+		input_dir = sys.argv[1]
+		output_dir = sys.argv[2]
 		csv_file = '../tmp/output/results.csv'
 
 		bname = splitext(basename(input_dir))[0]
