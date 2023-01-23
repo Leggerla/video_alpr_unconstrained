@@ -129,8 +129,8 @@ if __name__ == '__main__':
 
 							print(('\t\tLP: %s' % lp_str))
 
-							if lp_str not in image_plate_numbers:
-								number = correct_for_i(lp_str)
+							number = correct_for_i(lp_str)
+							if number not in image_plate_numbers:
 								image_plate_numbers.append(number)
 
 						else:
