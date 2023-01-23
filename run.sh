@@ -10,16 +10,6 @@ check_file()
 	fi
 }
 
-check_dir() 
-{
-	if [ ! -d "$1" ]
-	then
-		return 0
-	else
-		return 1
-	fi
-}
-
 
 # Check if Darknet is compiled
 check_file "darknet/libdarknet.so"
@@ -31,8 +21,8 @@ then
 fi
 
 lp_model="data/lp-detector/wpod-net_update1.h5"
-input_dir=''
-output_dir=''
+input_video=''
+output_file=''
 csv_file=''
 
 
@@ -54,55 +44,35 @@ usage() {
 
 while getopts 'i:o:c:l:h' OPTION; do
 	case $OPTION in
-		i) input_dir=$OPTARG;;
-		o) output_dir=$OPTARG;;
-		c) csv_file=$OPTARG;;
+		i) input_video=$OPTARG;;
+		o) output_file=$OPTARG;;
 		l) lp_model=$OPTARG;;
 		h) usage;;
 	esac
 done
 
-if [ -z "$input_dir"  ]; then echo "Input dir not set."; usage; exit 1; fi
-if [ -z "$output_dir" ]; then echo "Ouput dir not set."; usage; exit 1; fi
-if [ -z "$csv_file"   ]; then echo "CSV file not set." ; usage; exit 1; fi
+if [ -z "$input_video"  ]; then echo "Input video  not set."; usage; exit 1; fi
+if [ -z "$output_file" ]; then echo "Output file not set."; usage; exit 1; fi
 
 # Check if input dir exists
-check_file $input_dir
+check_file $input_video
 retval=$?
 if [ $retval -eq 0 ]
 then
-	echo "Input file ($input_dir) does not exist"
+	echo "Input file ($input_video) does not exist"
 	exit 1
 fi
 
 # Check if output dir exists, if not, create it
-check_dir $output_dir
+check_file $output_file
 retval=$?
-if [ $retval -eq 0 ]
+if [ $retval -eq 1 ]
 then
-	mkdir -p $output_dir
+	echo "Input file ($output_file) already exists"
+	exit 1
 fi
 
 # End if any error occur
 set -e
 
-# Detect vehicles
-#python vehicle-detection.py $input_dir $output_dir
-
-# Detect license plates
-#python license-plate-detection.py $output_dir $lp_model
-
-# OCR
-#python license-plate-ocr.py $output_dir
-
-python3 run.py $input_dir $output_dir
-
-# Draw output and generate list
-#python gen-outputs.py $input_dir $output_dir > $csv_file
-
-# Clean files and draw output
-rm $output_dir/*_lp.png
-rm $output_dir/*car.png
-rm $output_dir/*_cars.txt
-rm $output_dir/*_lp.txt
-rm $output_dir/*_str.txt
+python3 run.py $input_video $output_file

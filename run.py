@@ -1,13 +1,12 @@
 import sys
 import cv2
 import numpy as np
+import pandas as pd
 import traceback
 
 import darknet.python.darknet as dn
 
 from src.label import Label, Shape, dknet_label_conversion
-from os.path import isdir
-from os import makedirs
 from src.utils import crop_region, nms, im2single
 from darknet.python.darknet import detect
 from src.keras_utils import load_model, detect_lp
@@ -18,7 +17,7 @@ if __name__ == '__main__':
 	try:
 
 		video_path = sys.argv[1]
-		output_dir = sys.argv[2]
+		output_file = sys.argv[2]
 
 		vehicle_threshold = .5
 
@@ -43,10 +42,9 @@ if __name__ == '__main__':
 		ocr_net = dn.load_net(ocr_netcfg, ocr_weights, 0)
 		ocr_meta = dn.load_meta(ocr_dataset)
 
-		if not isdir(output_dir):
-			makedirs(output_dir)
-
 		print('Searching for vehicles using YOLO...')
+
+		all_plate_numbers = []
 
 		vidcap = cv2.VideoCapture(video_path)
 		success, image = vidcap.read()
@@ -65,10 +63,10 @@ if __name__ == '__main__':
 
 			if len(R):
 
+				image_plate_numbers = []
+
 				Iorig = image.copy()
 				WH = np.array(Iorig.shape[1::-1], dtype=float)
-				Lcars = []
-				Icars = []
 
 				for i, r in enumerate(R):
 
@@ -77,9 +75,6 @@ if __name__ == '__main__':
 					br = np.array([cx + w / 2., cy + h / 2.])
 					label = Label(0, tl, br)
 					Icar = crop_region(Iorig, label).astype(np.uint8)
-
-					Lcars.append(label)
-					Icars.append(Icar)
 
 					ratio = float(max(Icar.shape[:2])) / min(Icar.shape[:2])
 					side = int(ratio * 288.)
@@ -113,9 +108,14 @@ if __name__ == '__main__':
 
 							print(('\t\tLP: %s' % lp_str))
 
+							image_plate_numbers.append(lp_str)
+
 						else:
 
 							print('No characters found')
+
+				if image_plate_numbers:
+					all_plate_numbers.append(image_plate_numbers)
 
 			success, image = vidcap.read()
 
