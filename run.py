@@ -115,9 +115,12 @@ if __name__ == '__main__':
 							print('No characters found')
 
 				if image_plate_numbers:
+					image_plate_numbers.sort()
 					all_plate_numbers.append(image_plate_numbers)
 
 			success, image = vidcap.read()
+
+		pd.DataFrame(all_plate_numbers).to_csv(output_file)
 
 	except:
 		traceback.print_exc()
