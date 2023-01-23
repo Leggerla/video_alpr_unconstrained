@@ -12,6 +12,16 @@ from src.utils import crop_region, im2single, nms
 from src.keras_utils import load_model, detect_lp
 from darknet.python.darknet import detect
 
+def array_to_image(arr):
+    arr = arr.transpose(2,0,1)
+    c = arr.shape[0]
+    h = arr.shape[1]
+    w = arr.shape[2]
+    arr = (arr/255.0).flatten()
+    data = dn.c_array(dn.c_float, arr)
+    im = dn.IMAGE(w,h,c,data)
+    return im
+
 if __name__ == '__main__':
 
 	try:
@@ -55,7 +65,9 @@ if __name__ == '__main__':
 		success, Iorig = vidcap.read()
 		while success:
 
-			R, _ = detect(vehicle_net, vehicle_meta, Iorig, thresh=vehicle_threshold)
+
+			image = array_to_image(Iorig)
+			R, _ = detect(vehicle_net, vehicle_meta, image, thresh=vehicle_threshold)
 
 			R = [r for r in R if r[0] in ['car', 'bus']]
 
@@ -85,7 +97,8 @@ if __name__ == '__main__':
 					bound_dim = min(side + (side % (2 ** 4)), 608)
 					print(("\t\tBound dim: %d, ratio: %f" % (bound_dim, ratio)))
 
-					Llp, LlpImgs, _ = detect_lp(wpod_net, im2single(Icar), bound_dim, 2 ** 4, (240, 80),
+					image_Icar = array_to_image(Icar)
+					Llp, LlpImgs, _ = detect_lp(wpod_net, im2single(image_Icar), bound_dim, 2 ** 4, (240, 80),
 												lp_threshold)
 
 					if len(LlpImgs):
@@ -100,7 +113,8 @@ if __name__ == '__main__':
 
 
 						#####################
-						R, (width, height) = detect(ocr_net, ocr_meta, Ilp, thresh=ocr_threshold, nms=None)
+						image_Ilp = array_to_image(Ilp)
+						R, (width, height) = detect(ocr_net, ocr_meta, image_Ilp, thresh=ocr_threshold, nms=None)
 
 						if len(R):
 
