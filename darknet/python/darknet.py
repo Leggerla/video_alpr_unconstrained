@@ -132,38 +132,40 @@ def classify(net, meta, im):
     res = sorted(res, key=lambda x: -x[1])
     return res
 
+
 def detect(net, meta, image, thresh=.5, hier_thresh=.5, nms=.45):
-    if isinstance(image, bytes):
-        # image is a filename
-        # i.e. image = b'/darknet/data/dog.jpg'
-        im = load_image(image, 0, 0)
-    else:
-        # image is an nparray
-        # i.e. image = cv2.imread('/darknet/data/dog.jpg')
-        im, image = array_to_image(image)
-        rgbgr_image(im)
-    num = c_int(0)
-    pnum = pointer(num)
-    predict_image(net, im)
-    dets = get_network_boxes(net, im.w, im.h, thresh,
-                             hier_thresh, None, 0, pnum)
-    num = pnum[0]
-    if nms: do_nms_obj(dets, num, meta.classes, nms)
+	if isinstance(image, bytes):
+		# image is a filename
+		# i.e. image = b'/darknet/data/dog.jpg'
+		im = load_image(image, 0, 0)
+	else:
+		# image is an nparray
+		# i.e. image = cv2.imread('/darknet/data/dog.jpg')
+		im, image = array_to_image(image)
+		rgbgr_image(im)
+	num = c_int(0)
+	pnum = pointer(num)
+	predict_image(net, im)
+	dets = get_network_boxes(net, im.w, im.h, thresh,
+							 hier_thresh, None, 0, pnum)
+	num = pnum[0]
+	if nms: do_nms_obj(dets, num, meta.classes, nms)
 
-    res = []
-    for j in range(num):
-        a = dets[j].prob[0:meta.classes]
-        if any(a):
-            ai = np.array(a).nonzero()[0]
-            for i in ai:
-                b = dets[j].bbox
-                res.append((meta.names[i], dets[j].prob[i],
-                           (b.x, b.y, b.w, b.h)))
+	res = []
+	for j in range(num):
+		a = dets[j].prob[0:meta.classes]
+		if any(a):
+			ai = np.array(a).nonzero()[0]
+			for i in ai:
+				b = dets[j].bbox
+				res.append((meta.names[i], dets[j].prob[i],
+						   (b.x, b.y, b.w, b.h)))
 
-    res = sorted(res, key=lambda x: -x[1])
-    if isinstance(image, bytes): free_image(im)
-    free_detections(dets, num)
-    return res
+	res = sorted(res, key=lambda x: -x[1])
+	wh = (im.w, im.h)
+	if isinstance(image, bytes): free_image(im)
+	free_detections(dets, num)
+	return res
     
 if __name__ == "__main__":
     #net = load_net("cfg/densenet201.cfg", "/home/pjreddie/trained/densenet201.weights", 0)
