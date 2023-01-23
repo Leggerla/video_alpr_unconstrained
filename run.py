@@ -59,20 +59,17 @@ if __name__ == '__main__':
 		if not isdir(output_dir):
 			makedirs(output_dir)
 
-		print
-		'Searching for vehicles using YOLO...'
+		print('Searching for vehicles using YOLO...')
 
 		success, Iorig = vidcap.read()
 		while success:
-
 
 			image = array_to_image(Iorig)
 			R, _ = detect(vehicle_net, vehicle_meta, image, thresh=vehicle_threshold)
 
 			R = [r for r in R if r[0] in ['car', 'bus']]
 
-			print
-			'\t\t%d cars found' % len(R)
+			print(('\t\t%d cars found' % len(R)))
 
 			if len(R):
 
