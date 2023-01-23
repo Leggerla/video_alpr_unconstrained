@@ -12,15 +12,15 @@ from src.utils import crop_region, im2single, nms
 from src.keras_utils import load_model, detect_lp
 from darknet.python.darknet import detect
 
+
 def array_to_image(arr):
+    # need to return old values to avoid python freeing memory
     arr = arr.transpose(2,0,1)
-    c = arr.shape[0]
-    h = arr.shape[1]
-    w = arr.shape[2]
-    arr = (arr/255.0).flatten()
-    data = dn.c_array(dn.c_float, arr)
+    c, h, w = arr.shape[0:3]
+    arr = np.ascontiguousarray(arr.flat, dtype=np.float32) / 255.0
+    data = arr.ctypes.data_as(dn.POINTER(dn.c_float))
     im = dn.IMAGE(w,h,c,data)
-    return im
+    return im, arr
 
 if __name__ == '__main__':
 
@@ -64,7 +64,7 @@ if __name__ == '__main__':
 		success, Iorig = vidcap.read()
 		while success:
 
-			image = array_to_image(Iorig)
+			image, Iorig = array_to_image(Iorig)
 			R, _ = detect(vehicle_net, vehicle_meta, image, thresh=vehicle_threshold)
 
 			R = [r for r in R if r[0] in ['car', 'bus']]
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 					bound_dim = min(side + (side % (2 ** 4)), 608)
 					print(("\t\tBound dim: %d, ratio: %f" % (bound_dim, ratio)))
 
-					image_Icar = array_to_image(Icar)
+					image_Icar, Icar = array_to_image(Icar)
 					Llp, LlpImgs, _ = detect_lp(wpod_net, im2single(image_Icar), bound_dim, 2 ** 4, (240, 80),
 												lp_threshold)
 
@@ -105,12 +105,10 @@ if __name__ == '__main__':
 
 						s = Shape(Llp[0].pts)
 
-						#todo cv2.imwrite('%s/%s_lp.png' % (output_dir, bname), Ilp * 255.)
-						#todo writeShapes('%s/%s_lp.txt' % (output_dir, bname), [s])
-
 
 						#####################
-						image_Ilp = array_to_image(Ilp)
+						image_Ilp, Ilp = array_to_image(Ilp)
+						print('Performing OCR...')
 						R, (width, height) = detect(ocr_net, ocr_meta, image_Ilp, thresh=ocr_threshold, nms=None)
 
 						if len(R):
