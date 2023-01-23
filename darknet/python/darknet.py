@@ -2,49 +2,53 @@ from ctypes import *
 import numpy as np
 import random
 
+
 def sample(probs):
-    s = sum(probs)
-    probs = [a/s for a in probs]
-    r = random.uniform(0, 1)
-    for i in range(len(probs)):
-        r = r - probs[i]
-        if r <= 0:
-            return i
-    return len(probs)-1
+	s = sum(probs)
+	probs = [a / s for a in probs]
+	r = random.uniform(0, 1)
+	for i in range(len(probs)):
+		r = r - probs[i]
+		if r <= 0:
+			return i
+	return len(probs) - 1
+
 
 def c_array(ctype, values):
-    arr = (ctype*len(values))()
-    arr[:] = values
-    return arr
+	arr = (ctype * len(values))()
+	arr[:] = values
+	return arr
+
 
 class BOX(Structure):
-    _fields_ = [("x", c_float),
-                ("y", c_float),
-                ("w", c_float),
-                ("h", c_float)]
+	_fields_ = [("x", c_float),
+				("y", c_float),
+				("w", c_float),
+				("h", c_float)]
+
 
 class DETECTION(Structure):
-    _fields_ = [("bbox", BOX),
-                ("classes", c_int),
-                ("prob", POINTER(c_float)),
-                ("mask", POINTER(c_float)),
-                ("objectness", c_float),
-                ("sort_class", c_int)]
+	_fields_ = [("bbox", BOX),
+				("classes", c_int),
+				("prob", POINTER(c_float)),
+				("mask", POINTER(c_float)),
+				("objectness", c_float),
+				("sort_class", c_int)]
 
 
 class IMAGE(Structure):
-    _fields_ = [("w", c_int),
-                ("h", c_int),
-                ("c", c_int),
-                ("data", POINTER(c_float))]
+	_fields_ = [("w", c_int),
+				("h", c_int),
+				("c", c_int),
+				("data", POINTER(c_float))]
+
 
 class METADATA(Structure):
-    _fields_ = [("classes", c_int),
-                ("names", POINTER(c_char_p))]
+	_fields_ = [("classes", c_int),
+				("names", POINTER(c_char_p))]
 
-    
 
-#lib = CDLL("/home/pjreddie/documents/darknet/libdarknet.so", RTLD_GLOBAL)
+# lib = CDLL("/home/pjreddie/documents/darknet/libdarknet.so", RTLD_GLOBAL)
 lib = CDLL("darknet/libdarknet.so", RTLD_GLOBAL)
 lib.network_width.argtypes = [c_void_p]
 lib.network_width.restype = c_int
@@ -114,23 +118,24 @@ predict_image = lib.network_predict_image
 predict_image.argtypes = [c_void_p, IMAGE]
 predict_image.restype = POINTER(c_float)
 
+
 def array_to_image(arr):
-    # need to return old values to avoid python freeing memory
-    arr = arr.transpose(2,0,1)
-    c, h, w = arr.shape[0:3]
-    arr = np.ascontiguousarray(arr.flat, dtype=np.float32) / 255.0
-    data = arr.ctypes.data_as(POINTER(c_float))
-    im = IMAGE(w,h,c,data)
-    return im, arr
+	# need to return old values to avoid python freeing memory
+	arr = arr.transpose(2, 0, 1)
+	c, h, w = arr.shape[0:3]
+	arr = np.ascontiguousarray(arr.flat, dtype=np.float32) / 255.0
+	data = arr.ctypes.data_as(POINTER(c_float))
+	im = IMAGE(w, h, c, data)
+	return im, arr
 
 
 def classify(net, meta, im):
-    out = predict_image(net, im)
-    res = []
-    for i in range(meta.classes):
-        res.append((meta.names[i], out[i]))
-    res = sorted(res, key=lambda x: -x[1])
-    return res
+	out = predict_image(net, im)
+	res = []
+	for i in range(meta.classes):
+		res.append((meta.names[i], out[i]))
+	res = sorted(res, key=lambda x: -x[1])
+	return res
 
 
 def detect(net, meta, image, thresh=.5, hier_thresh=.5, nms=.45):
@@ -159,7 +164,7 @@ def detect(net, meta, image, thresh=.5, hier_thresh=.5, nms=.45):
 			for i in ai:
 				b = dets[j].bbox
 				res.append((meta.names[i], dets[j].prob[i],
-						   (b.x, b.y, b.w, b.h)))
+							(b.x, b.y, b.w, b.h)))
 
 	res = sorted(res, key=lambda x: -x[1])
 	wh = (im.w, im.h)
@@ -167,15 +172,14 @@ def detect(net, meta, image, thresh=.5, hier_thresh=.5, nms=.45):
 	free_detections(dets, num)
 	return res, wh
 
-if __name__ == "__main__":
-    #net = load_net("cfg/densenet201.cfg", "/home/pjreddie/trained/densenet201.weights", 0)
-    #im = load_image("data/wolf.jpg", 0, 0)
-    #meta = load_meta("cfg/imagenet1k.data")
-    #r = classify(net, meta, im)
-    #print r[:10]
-    net = load_net("cfg/tiny-yolo.cfg", "tiny-yolo.weights", 0)
-    meta = load_meta("cfg/coco.data")
-    r = detect(net, meta, "data/dog.jpg")
-    print(r)
-    
 
+if __name__ == "__main__":
+	# net = load_net("cfg/densenet201.cfg", "/home/pjreddie/trained/densenet201.weights", 0)
+	# im = load_image("data/wolf.jpg", 0, 0)
+	# meta = load_meta("cfg/imagenet1k.data")
+	# r = classify(net, meta, im)
+	# print r[:10]
+	net = load_net("cfg/tiny-yolo.cfg", "tiny-yolo.weights", 0)
+	meta = load_meta("cfg/coco.data")
+	r = detect(net, meta, "data/dog.jpg")
+	print(r)
