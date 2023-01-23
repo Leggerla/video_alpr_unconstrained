@@ -64,7 +64,7 @@ if __name__ == '__main__':
 		success, Iorig = vidcap.read()
 		while success:
 
-			image, Iorig = array_to_image(Iorig)
+			image, Iorig_copy = array_to_image(Iorig)
 			R, _ = detect(vehicle_net, vehicle_meta, image, thresh=vehicle_threshold)
 
 			R = [r for r in R if r[0] in ['car', 'bus']]
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 					bound_dim = min(side + (side % (2 ** 4)), 608)
 					print(("\t\tBound dim: %d, ratio: %f" % (bound_dim, ratio)))
 
-					image_Icar, Icar = array_to_image(Icar)
+					image_Icar, Icar_copy = array_to_image(Icar)
 					Llp, LlpImgs, _ = detect_lp(wpod_net, im2single(image_Icar), bound_dim, 2 ** 4, (240, 80),
 												lp_threshold)
 
@@ -107,7 +107,7 @@ if __name__ == '__main__':
 
 
 						#####################
-						image_Ilp, Ilp = array_to_image(Ilp)
+						image_Ilp, Ilp_copy = array_to_image(Ilp)
 						print('Performing OCR...')
 						R, (width, height) = detect(ocr_net, ocr_meta, image_Ilp, thresh=ocr_threshold, nms=None)
 
