@@ -1,6 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="be8d688c-5902-4568-88d7-be183b1bcca0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/darknet_old/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/compile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/LICENSE.fuck" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/LICENSE.fuck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/LICENSE.gen" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/LICENSE.gen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/LICENSE.gpl" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/LICENSE.gpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/LICENSE.meta" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/LICENSE.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/LICENSE.mit" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/LICENSE.mit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/LICENSE.v1" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/LICENSE.v1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/darknet/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/art.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/art.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/attention.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/attention.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/captcha.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/captcha.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/cifar.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/cifar.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/classifier.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/classifier.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/coco.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/coco.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/darknet.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/darknet.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/detector-scipy-opencv.py" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/detector-scipy-opencv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/detector.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/detector.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/dice.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/dice.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/go.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/go.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/instance-segmenter.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/instance-segmenter.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/lsd.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/lsd.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/nightmare.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/nightmare.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/regressor.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/regressor.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/rnn.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/rnn.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/rnn_vid.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/rnn_vid.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/segmenter.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/segmenter.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/super.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/super.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/swag.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/swag.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/tag.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/tag.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/voxel.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/voxel.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/writing.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/writing.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/examples/yolo.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/examples/yolo.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/include/darknet.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/include/darknet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/python/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/python/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/python/darknet.py" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/python/darknet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/python/proverbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/python/proverbot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/scripts/dice_label.sh" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/scripts/dice_label.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/scripts/gen_tactic.sh" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/scripts/gen_tactic.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/scripts/get_coco_dataset.sh" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/scripts/get_coco_dataset.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/scripts/imagenet_label.sh" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/scripts/imagenet_label.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/scripts/voc_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/scripts/voc_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/activation_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/activation_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/activation_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/activation_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/activation_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/activation_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/activations.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/activations.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/activations.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/activations.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/avgpool_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/avgpool_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/avgpool_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/avgpool_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/avgpool_layer_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/avgpool_layer_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/batchnorm_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/batchnorm_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/batchnorm_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/batchnorm_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/blas.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/blas.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/blas.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/blas.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/blas_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/blas_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/box.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/box.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/box.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/box.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/classifier.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/classifier.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/col2im.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/col2im.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/col2im.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/col2im.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/col2im_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/col2im_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/compare.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/compare.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/connected_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/connected_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/connected_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/connected_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/convolutional_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/convolutional_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/convolutional_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/convolutional_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/convolutional_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/convolutional_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/cost_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/cost_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/cost_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/cost_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/crnn_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/crnn_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/crnn_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/crnn_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/crop_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/crop_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/crop_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/crop_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/crop_layer_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/crop_layer_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/cuda.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/cuda.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/cuda.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/cuda.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/data.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/data.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/data.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/data.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/deconvolutional_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/deconvolutional_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/deconvolutional_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/deconvolutional_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/deconvolutional_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/deconvolutional_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/demo.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/demo.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/demo.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/demo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/detection_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/detection_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/detection_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/detection_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/dropout_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/dropout_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/dropout_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/dropout_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/dropout_layer_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/dropout_layer_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/gemm.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/gemm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/gemm.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/gemm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/gru_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/gru_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/gru_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/gru_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/im2col.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/im2col.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/im2col.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/im2col.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/im2col_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/im2col_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/image.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/image.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/image.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/image.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/iseg_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/iseg_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/iseg_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/iseg_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/l2norm_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/l2norm_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/l2norm_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/l2norm_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/list.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/list.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/list.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/list.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/local_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/local_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/local_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/local_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/logistic_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/logistic_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/logistic_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/logistic_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/lstm_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/lstm_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/lstm_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/lstm_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/matrix.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/matrix.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/maxpool_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/maxpool_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/maxpool_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/maxpool_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/maxpool_layer_kernels.cu" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/maxpool_layer_kernels.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/network.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/network.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/network.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/network.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/normalization_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/normalization_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/normalization_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/normalization_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/option_list.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/option_list.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/option_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/option_list.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/parser.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/parser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/region_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/region_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/region_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/region_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/reorg_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/reorg_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/reorg_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/reorg_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/rnn_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/rnn_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/rnn_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/rnn_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/route_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/route_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/route_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/route_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/shortcut_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/shortcut_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/shortcut_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/shortcut_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/softmax_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/softmax_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/softmax_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/softmax_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/stb_image.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/stb_image.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/stb_image_write.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/stb_image_write.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/tree.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/tree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/upsample_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/upsample_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/upsample_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/upsample_layer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/yolo_layer.c" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/yolo_layer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/darknet/src/yolo_layer.h" beforeDir="false" afterPath="$PROJECT_DIR$/darknet_old/src/yolo_layer.h" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="python3_compatible" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/darknet" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Kmb7zYPKjfSIWjzKxMN7U3BRMC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be8d688c-5902-4568-88d7-be183b1bcca0" name="Changes" comment="" />
+      <created>1674582541427</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1674582541427</updated>
+    </task>
+    <servers />
   </component>
 </project>

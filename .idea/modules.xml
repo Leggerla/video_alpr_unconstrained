@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/alpr_unconstrained_video.iml" filepath="$PROJECT_DIR$/.idea/alpr_unconstrained_video.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/video_alpr_unconstrained_2.iml" filepath="$PROJECT_DIR$/.idea/video_alpr_unconstrained_2.iml" />
     </modules>
   </component>
 </project>
