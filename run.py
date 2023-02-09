@@ -4,11 +4,11 @@ import numpy as np
 import pandas as pd
 import traceback
 
-import darknet.python.darknet as dn
+import darknet.darknet as dn
 
 from src.label import Label, Shape, dknet_label_conversion
 from src.utils import crop_region, nms, im2single
-from darknet.python.darknet import detect
+from darknet.darknet import detect_image as detect
 from src.keras_utils import load_model, detect_lp
 
 def is_standard(number):
@@ -42,9 +42,9 @@ if __name__ == '__main__':
 
 		vehicle_threshold = .5
 
-		vehicle_weights = b'data/vehicle-detector/yolo-voc.weights'
-		vehicle_netcfg = b'data/vehicle-detector/yolo-voc.cfg'
-		vehicle_dataset = b'data/vehicle-detector/voc.data'
+		vehicle_weights = b'darknet/cfg/yolo-voc.weights'
+		vehicle_netcfg = b'darknet/cfg/yolo-voc.cfg'
+		vehicle_dataset = b'darknet/cfg/voc.data'
 
 		# import pdb; pdb.set_trace()
 		vehicle_net = dn.load_net(vehicle_netcfg, vehicle_weights, 0)
